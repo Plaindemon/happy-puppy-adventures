@@ -5,7 +5,7 @@ function Sitting() {
   return (
     <section className="sitting">
       <div id="sitting-div">
-        <h2 className="sitting-header">Dog Boarding</h2>
+        <h2 className="sitting-header">Dog Overnight Sitting</h2>
         <div>
             <ul>
                 <li>text</li>

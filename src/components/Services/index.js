@@ -1,17 +1,17 @@
 import React from "react";
 // import "../styles/Services.css";
 
-import "../../App.css"
+// import "../../App.css";
 // import Overnight from "./Overnight";
 // import Walks from "./Walks";
 // import Sitting from "./Sitting";
 // import VetService from "./VetServices";
-import ServiceCards from "../Cards/ServicesCards";
+import ServiceCards from "./ServicesCards";
 
 function ServicesComponent() {
   return (
-    <section className="services">
-      <h2>Our services</h2>
+    <section>
+      <h2>Services</h2>
       <div>
         <ServiceCards />
       </div>

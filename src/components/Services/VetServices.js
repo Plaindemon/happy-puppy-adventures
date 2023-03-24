@@ -1,11 +1,11 @@
 import React from 'react';
 // import "../styles/Services.css";
 
-function VetService() {
+function VetTaxi() {
   return (
-    <section className="vetService">
-      <div id="vetService-div">
-        <h2 className="vetService-header">Pet Taxi</h2>
+    <section className="vet-taxi">
+      <div id="vet-taxi-div">
+        <h2 className="vet-taxi-header">Pet Taxi</h2>
         <div>
             <ul>
                 <li>text</li>
@@ -19,4 +19,4 @@ function VetService() {
   );
 }
 
-export default VetService;
+export default VetTaxi;

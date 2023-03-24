@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import "../styles/NewClient.css";
 import { FormPage } from '../components/Form';
 import { NewClientForm } from '../components/NewClientForm';
 
 function NewClient() {
   return (
-    <section className="NewClient">
-      <div id="NewClient-div">
-        <h2 className="NewClient-header">New Client? Send me a request below</h2>
+    <section className="new-client">
+      <div id="new-client-div">
+        <h2 className="new-client-header">New Client?</h2>
+        <h4 className="new-client-header-h4"> Send me an email below and I will reach out as soon as possible</h4>
         {/* <FormPage /> */}
         <NewClientForm />
       </div>

@@ -9,14 +9,14 @@ import Hero from "../../assets/pexels-johann-1254140.jpg";
 function BannerComponent() {
   return (
     <div className="hero-container">
-      {/* <video
-        src="/videos/trees.mp4"
+      <video
+        src="/videos/red-rocks.mp4"
         autoPlay
         loop
         muted
         className="hero-video"
-      /> */}
-      <img  src={Hero} id="hero-img" alt="dog sitting" width="100%" />
+      />
+      {/* <img  src={Hero} id="hero-img" alt="dog sitting" width="100%" ></img> */}
 
       <h1>Happy Puppy Adventures</h1>
       <p>Experienced Dog Care Specialist</p>
@@ -33,7 +33,7 @@ function BannerComponent() {
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          Watch Trailer
+          Photo Gallery
         </Button>
       </div>
       {/* <Button>Register Here</Button> */}

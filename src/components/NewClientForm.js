@@ -1,11 +1,16 @@
 import React from "react";
 import { Form, Col, Button, InputGroup } from "react-bootstrap";
+import "../styles/NewClientForm.css";
+
+import DatePickerComponent from "./DatePicker";
 
 const initialFormData = Object.freeze({
   username: "",
   email: "",
   mobile: "",
   query: "",
+  my_file: [],
+  dates: ""
 });
 
 export const NewClientForm = (props) => {
@@ -31,22 +36,28 @@ export const NewClientForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Thank you for your message. Your query has been forwarded.`);
-    const templateId = "template_zjfl9m5";
+    const templateId = "template_uosd5gv";
     const serviceID = "service_yd2rq9k";
     sendFeedback(serviceID, templateId, {
       from_name: formData.name,
       mobile: formData.mobile,
       message_html: formData.query,
       email: formData.email,
+      dates: formData.dates,
+      my_file: formData.my_file
     });
 
     console.log(formData);
   };
 
   return (
-    <Form>
-      <Form.Group as={Col} controlId="formGridName">
-        <Form.Label>Name*</Form.Label>
+    <Form className="form-container">
+      <Form.Group
+        as={Col}
+        controlId="formGridName"
+        className="form-group-container"
+      >
+        <Form.Label className="form-label">Name*</Form.Label>
         <Form.Control
           onChange={handleChange}
           name="name"
@@ -55,8 +66,12 @@ export const NewClientForm = (props) => {
         />
       </Form.Group>
 
-      <Form.Group as={Col} controlId="formGridEmail">
-        <Form.Label>Email</Form.Label>
+      <Form.Group
+        as={Col}
+        controlId="formGridEmail"
+        className="form-group-container"
+      >
+        <Form.Label className="form-label">Email</Form.Label>
         <Form.Control
           onChange={handleChange}
           name="email"
@@ -64,46 +79,52 @@ export const NewClientForm = (props) => {
           placeholder="Enter email"
         />
       </Form.Group>
-      <Form.Group as={Col} controlId="formGridMobile">
-        <Form.Label>Mobile no.</Form.Label>
+      <Form.Group
+        as={Col}
+        controlId="formGridMobile"
+        className="form-group-container"
+      >
+        <Form.Label className="form-label">Mobile no.</Form.Label>
         <Form.Control onChange={handleChange} name="mobile" placeholder="" />
       </Form.Group>
-      <Form.Group as={Col} id="formGridQuery">
-        <Form.Label>Request Dates & Times</Form.Label>
-        <Form.Control
+      {/* <Form.Group as={Col} id="formGridQuery" className="form-group-container">
+        <Form.Label className="form-label">Request Dates & Times</Form.Label>
+
+        <DatePickerComponent
           onChange={handleChange}
           name="dates"
           as="textarea"
           rows={3}
         />
-      </Form.Group>
-      <Form.Group as={Col} id="formGridQuery">
-        <Form.Label>Message</Form.Label>
+      </Form.Group> */}
+      <Form.Group as={Col} id="formGridQuery" className="form-group-container">
+        <Form.Label className="form-label">Message</Form.Label>
         <Form.Control
           onChange={handleChange}
           name="query"
           as="textarea"
-          rows={3}
+          rows={4}
         />
       </Form.Group>
 
-      <Form.Group
+      {/* <Form.Group
         as={Col}
         controlId="formGridEmail"
         encType="multipart/form-data"
         method="post"
         onSubmit={handleSubmit}
-      >
-        <Form.Label>Attach file:</Form.Label>
+        className="form-group-container"
+      > */}
+        {/* <Form.Label className="form-label">Attach file:</Form.Label> */}
         {/* <Form.Control
           onChange={handleChange}
           name="email"
           type="email"
           placeholder="Enter email"
         /> */}
-        <input type="file" name="my_file" />
+        {/* <input type="file" name="my_file" /> */}
         {/* <input type="submit" value="Submit" /> */}
-      </Form.Group>
+      {/* </Form.Group> */}
 
       <Button onClick={handleSubmit} variant="primary" type="submit">
         Submit
