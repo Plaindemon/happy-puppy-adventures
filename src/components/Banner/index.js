@@ -3,6 +3,8 @@ import "../../styles/BannerHero.css";
 import "../../App.css";
 
 import { Button } from "../Button";
+import { GalleryButton } from "./GalleryButton";
+
 
 import Hero from "../../assets/pexels-johann-1254140.jpg";
 
@@ -28,13 +30,13 @@ function BannerComponent() {
         >
           Get Started
         </Button>
-        <Button
+        <GalleryButton
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
           Photo Gallery
-        </Button>
+        </GalleryButton>
       </div>
       {/* <Button>Register Here</Button> */}
     </div>

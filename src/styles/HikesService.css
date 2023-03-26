@@ -1,0 +1,26 @@
+.hikes-container-outer-div {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.hikes-header {
+    font-size: 1.5rem;
+    margin: 10px;
+
+}
+
+.hikes-container-inner-div {
+    margin: 20px;
+    
+}
+
+.hikes-container-ul {
+    margin: 25px;
+}
+
+.hikes-li {
+    margin: 20px;
+}

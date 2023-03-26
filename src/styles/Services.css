@@ -1,18 +1,27 @@
-/* .services{
-    padding: 20px;
-    display: flex;
-}
+ .services-container {
+    background-image: url('/src/assets/dark-red.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    font-size: 2rem;
+  }
 
-#services-div {
-    background-color:  #ADE1E5;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+ .services-div {
+    /* background-color:  #ADE1E5; */
+    padding: 4rem;
+    border-radius: 10px;
+    /* display: flex; */
+    /* flex: 1; */
+    margin: 0 1rem;
+    /* border-radius: 10px; */
+    /* margin: 15px; */
+    /* border-radius: 5px; */
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    /* transition: 0.3s; */
     
 }
-#services-div :hover {
+/*#services-div :hover {
     background-color: #64647e3f;
 }
 

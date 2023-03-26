@@ -1,0 +1,26 @@
+.dropIn-container-outer-div {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.dropIn-header {
+    font-size: 1.5rem;
+    margin: 10px;
+
+}
+
+.dropIn-container-inner-div {
+    margin: 20px;
+    
+}
+
+.dropIn-container-ul {
+    margin: 25px;
+}
+
+.dropIn-li {
+    margin: 20px;
+}

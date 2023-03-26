@@ -1,5 +1,5 @@
 import React from "react";
-// import "../styles/Services.css";
+import "../../styles/Services.css";
 
 // import "../../App.css";
 // import Overnight from "./Overnight";
@@ -10,16 +10,11 @@ import ServiceCards from "./ServicesCards";
 
 function ServicesComponent() {
   return (
-    <section>
-      <h2>Services</h2>
-      <div>
+      <div className="services-div">
+        <h2>Services</h2>
         <ServiceCards />
       </div>
 
-      {/* <div id="services-div">
-        <h2 className="services-header">Dog walks/ hikes</h2>
-      </div> */}
-    </section>
   );
 }
 

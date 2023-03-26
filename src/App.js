@@ -14,6 +14,7 @@ import Sitting from "./components/Services/Sitting"
 import VetTaxi from "./components/Services/VetServices";
 import DropIn from "./components/Services/DropIn";
 import BannerComponent from "./components/Banner";
+import ClientPaperwork from "./pages/ClientPaperwork";
 
 import Gallery from "./components/PhotoGallery";
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/drop-in" element={<DropIn />} />
           <Route path="/daycare" element={<Daycare />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/paperwork" element={<ClientPaperwork />} />
         </Routes>
         {/* <Home /> */}
         {/* <ServicesComponent /> */}
