@@ -6,8 +6,6 @@ import { Button } from "../Button";
 import { GalleryButton } from "./GalleryButton";
 
 
-import Hero from "../../assets/pexels-johann-1254140.jpg";
-
 function BannerComponent() {
   return (
     <div className="hero-container">

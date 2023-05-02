@@ -13,12 +13,12 @@ import Hikes from "./components/Services/Hikes";
 import Sitting from "./components/Services/Sitting"
 import VetTaxi from "./components/Services/VetServices";
 import DropIn from "./components/Services/DropIn";
-import BannerComponent from "./components/Banner";
+
 import ClientPaperwork from "./pages/ClientPaperwork";
 
 import Gallery from "./components/PhotoGallery";
 
-import ServicesComponent from "./components/Services/index";
+
 import Daycare from "./components/Services/Daycare";
 
 
