@@ -1,5 +1,6 @@
 .navbar {
     background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    
     height: 110px;
     display: flex;
     justify-content: center;
@@ -20,15 +21,20 @@
   
   .navbar-logo {
     color: #fff;
-    justify-self: start;
+    
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.5rem;
     font-family: 'Caveat', cursive;
-    display: flex;
+    
     align-items: center;
-  }
+        /* background: url('/images/HPA_LOGO.svg'); */
+        }
+
+ .navbar-img {
+   height: 5rem;
+ }
   
   .fa-typo3 {
     margin-left: 0.5rem;
@@ -100,7 +106,9 @@
       transition: all 0.5s ease;
       z-index: 1;
     }
-  
+  .nav-item {
+    margin-bottom:100px;
+  }
     .nav-links {
       text-align: center;
       padding: 2rem;

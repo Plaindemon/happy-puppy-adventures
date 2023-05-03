@@ -8,7 +8,7 @@ function NewClient() {
     <section className="new-client">
       <div id="new-client-div">
         <h2 className="new-client-header">New Client?</h2>
-        <h4 className="new-client-header-h4"> Send me an email below and I will reach out as soon as possible</h4>
+        <h4 className="new-client-header"> Send me an email below and I will reach out as soon as possible</h4>
         {/* <FormPage /> */}
         <NewClientForm />
       </div>
