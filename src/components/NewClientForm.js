@@ -57,9 +57,10 @@ export const NewClientForm = (props) => {
         controlId="formGridName"
         className="form-group-container"
       >
-        <Form.Label className="form-label">Name*</Form.Label>
+        <Form.Label className="form-label">Name</Form.Label>
         <Form.Control
           onChange={handleChange}
+          className="form-input"
           name="name"
           type="name"
           placeholder="Name"
@@ -74,6 +75,7 @@ export const NewClientForm = (props) => {
         <Form.Label className="form-label">Email</Form.Label>
         <Form.Control
           onChange={handleChange}
+          className="form-input"
           name="email"
           type="email"
           placeholder="Enter email"
@@ -85,13 +87,15 @@ export const NewClientForm = (props) => {
         className="form-group-container"
       >
         <Form.Label className="form-label">Mobile no.</Form.Label>
-        <Form.Control onChange={handleChange} name="mobile" placeholder="" />
+        <Form.Control onChange={handleChange}
+      className="form-input" name="mobile" placeholder="" />
       </Form.Group>
       {/* <Form.Group as={Col} id="formGridQuery" className="form-group-container">
         <Form.Label className="form-label">Request Dates & Times</Form.Label>
 
         <DatePickerComponent
           onChange={handleChange}
+          className="form-input"
           name="dates"
           as="textarea"
           rows={3}
@@ -101,6 +105,7 @@ export const NewClientForm = (props) => {
         <Form.Label className="form-label">Message</Form.Label>
         <Form.Control
           onChange={handleChange}
+          className="form-input"
           name="query"
           as="textarea"
           rows={4}
@@ -118,6 +123,7 @@ export const NewClientForm = (props) => {
         {/* <Form.Label className="form-label">Attach file:</Form.Label> */}
         {/* <Form.Control
           onChange={handleChange}
+          className="form-input"
           name="email"
           type="email"
           placeholder="Enter email"
@@ -126,7 +132,7 @@ export const NewClientForm = (props) => {
         {/* <input type="submit" value="Submit" /> */}
       {/* </Form.Group> */}
 
-      <Button onClick={handleSubmit} variant="primary" type="submit">
+      <Button onClick={handleSubmit} className="form-submit-button" variant="primary" type="submit">
         Submit
       </Button>
     </Form>
