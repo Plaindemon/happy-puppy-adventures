@@ -29,7 +29,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <i className={HPALOGO} />
+          <img src={HPALOGO} className="navbar-img" alt="logo"/>
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             Happy Puppy Adventures
           </Link>

@@ -21,17 +21,20 @@
   
   .navbar-logo {
     color: #fff;
-    justify-self: start;
+    
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.5rem;
     font-family: 'Caveat', cursive;
-    display: flex;
+    
     align-items: center;
         /* background: url('/images/HPA_LOGO.svg'); */
+        }
 
-  }
+ .navbar-img {
+   height: 5rem;
+ }
   
   .fa-typo3 {
     margin-left: 0.5rem;
