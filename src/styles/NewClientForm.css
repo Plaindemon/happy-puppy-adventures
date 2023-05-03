@@ -53,11 +53,16 @@
   font-size: 2rem;
 }
 
-.new-client-header {
+h2.new-client-header {
   font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.new-client-header-h4 {
+h4.new-client-header  {
   font-size: 32px;
   align-items: center;
+  margin: 20px;
 }
