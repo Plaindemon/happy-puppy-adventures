@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../Button";
+import HPALOGO from "../../assets/HPA_LOGO.svg";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -28,7 +29,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          {/* <i className="fa-solid fa-dog" /> */}
+          <i className={HPALOGO} />
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             Happy Puppy Adventures
           </Link>
