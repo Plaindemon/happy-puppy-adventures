@@ -26,7 +26,7 @@ function Footer() {
             <div className='footer-link-items'>
                 <h2>About us</h2>
                 
-                <a href="https://disco-outlet.onrender.com/">Portfolio - Ben</a>
+                <a href="https://personal-portfolio-57sd.onrender.com">Portfolio - Ben</a>
                 {/* <Link to ="/">Locations</Link> */}
                 {/* <Link to ="/">Reviews</Link> */}
                 
