@@ -1,5 +1,6 @@
 import react from "react";
 import Signup from "./Signup";
+// import Login from "./Login";
 
 import { Container} from "react-bootstrap";
 
@@ -10,6 +11,10 @@ function Registration() {
           <div className="w-100" style={{ maxWidth: '400px' }}>
                <Signup />
           </div>
+          
+          {/* <div className="w-100" style={{ maxWidth: '400px' }}>
+               <Login />
+          </div> */}
        
       </Container>
     </>

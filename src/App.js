@@ -21,7 +21,7 @@ import Gallery from "./components/PhotoGallery";
 import Daycare from "./components/Services/Daycare";
 
 import Registration from "./components/Register/index";
-import Signup from "./components/Register/Signup";
+import Login from "./components/Register/Login";
 import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/register" element={<Registration />} />
 
-            {/* <Route path="/signup" element={<Signup />} /> */}
+            <Route path="/login" element={<Login />} />
             <Route path="/paperwork" element={<ClientPaperwork />} />
           </Routes>
           {/* <Signup /> */}

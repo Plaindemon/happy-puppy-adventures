@@ -19,16 +19,18 @@ function Signup() {
       return setError("Passwords do not match");
     }
 
-    try {
-      setError("");
-      setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
-    } catch {
-    //   setError("Failed to create an account");
-    }
-
+   try {
+    setLoading(true);
+    setError("");
+    await signup(emailRef.current.value, passwordRef.current.value);
+    history.push("/");
+  } catch (error) {
+    // setError("Failed to create an account");
+  } finally {
     setLoading(false);
+  }
+
+    
   }
 
   return (

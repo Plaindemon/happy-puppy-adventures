@@ -52,15 +52,15 @@ function Navbar() {
                 Register
               </Link>
             </li>
-             {/* <li className="nav-item">
+             <li className="nav-item">
               <Link
-                to="/signup"
+                to="/login"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Signup
+                Login
               </Link>
-            </li> */}
+            </li>
             <li className="nav-item">
               <Link
                 to="/services"
