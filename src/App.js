@@ -22,9 +22,15 @@ import Daycare from "./components/Services/Daycare";
 
 import Registration from "./components/Register/index";
 import Login from "./components/Register/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
+import ForgotPassword from "./components/Register/ForgotPassword";
 import { AuthProvider } from "./contexts/AuthContext";
 
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import UpdateProfile from "./components/Dashboard/UpdateProfile";
+
 function App() {
+  
   return (
     <AuthProvider>
       <div className="App">
@@ -34,6 +40,11 @@ function App() {
 
           <Routes>
             <Route path="/" exact element={<Home />} />
+            <Route>
+              <Route path="/dashboard" element={<Dashboard />}/>
+              <Route path="/update-profile" element={<UpdateProfile />} />
+            </Route>
+            
             <Route path="/services" element={<Services />} />
             <Route path="/new-client" element={<NewClient />} />
 
@@ -45,8 +56,10 @@ function App() {
             <Route path="/daycare" element={<Daycare />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/register" element={<Registration />} />
+            
 
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/paperwork" element={<ClientPaperwork />} />
           </Routes>
           {/* <Signup /> */}

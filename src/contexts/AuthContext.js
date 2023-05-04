@@ -3,6 +3,7 @@ import { auth } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -60,15 +61,15 @@ export function AuthProvider({ children }) {
   }
 
   function resetPassword(email) {
-    return auth.sendPasswordResetEmail(email);
+    return sendPasswordResetEmail(auth, email);
   }
 
   function updateEmail(email) {
-    return currentUser.updateEmail(email);
+    return updateEmail(currentUser, email);
   }
 
   function updatePassword(password) {
-    return currentUser.updatePassword(password);
+    return updatePassword(currentUser, password);
   }
 
   useEffect(() => {
