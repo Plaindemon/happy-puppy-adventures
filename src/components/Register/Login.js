@@ -19,9 +19,10 @@ function Login() {
       setLoading(true);
       setError("");
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history("/dashboard");
     } catch (error) {
     //   setError("Failed to sign in");
+    console.log(error)
     } finally {
       setLoading(false);
     }

@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 
 const AuthContext = createContext();
@@ -15,42 +18,42 @@ export function AuthProvider({ children }) {
 
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password)
-     .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorCode)
-    console.log(errorMessage)
-    
-    // ..
-  });
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+
+        // ..
+      });
   }
-    function login(email, password) {
+  function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password)
-     .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorCode)
-    console.log(errorMessage)
-    
-    // ..
-  });
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+
+        // ..
+      });
   }
 
-  function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
-  }
+//   function login(email, password) {
+//     return auth.signInWithEmailAndPassword(email, password);
+//   }
 
   function logout() {
     return auth.signOut();
@@ -71,7 +74,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsub = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-      console.log(user)
+      console.log(user);
       setLoading(false);
     });
 

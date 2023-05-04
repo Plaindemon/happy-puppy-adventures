@@ -23,7 +23,7 @@ function Signup() {
     setLoading(true);
     setError("");
     await signup(emailRef.current.value, passwordRef.current.value);
-    history.push("/");
+    history("/");
   } catch (error) {
     // setError("Failed to create an account");
   } finally {
