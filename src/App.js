@@ -23,6 +23,7 @@ import Daycare from "./components/Services/Daycare";
 import Registration from "./components/Register/index";
 import Login from "./components/Register/Login";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Profile from "./components/Dashboard/Profile";
 import ForgotPassword from "./components/Register/ForgotPassword";
 import { AuthProvider } from "./contexts/AuthContext";
 
@@ -43,6 +44,7 @@ function App() {
             <Route>
               <Route path="/dashboard" element={<Dashboard />}/>
               <Route path="/update-profile" element={<UpdateProfile />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
             
             <Route path="/services" element={<Services />} />
@@ -61,6 +63,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/paperwork" element={<ClientPaperwork />} />
+            
           </Routes>
           {/* <Signup /> */}
           {/* <Home /> */}

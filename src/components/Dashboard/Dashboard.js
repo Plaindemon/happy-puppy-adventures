@@ -4,7 +4,7 @@ import Logout from "../Register/Logout";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
-function Dashboard() {
+export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
 
@@ -25,4 +25,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+ 

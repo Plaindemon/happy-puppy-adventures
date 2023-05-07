@@ -1,0 +1,267 @@
+import React, { useState, createContext, useContext, useEffect } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/database';
+
+
+const AuthContext = createContext();
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
+// const auth = getAuth();
+export function AuthProvider({ children }) {
+  const [currentUser, setCurrentUser] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  const [clientProfiles, setClientProfiles] = useState([]);
+  const [employeeProfiles, setEmployeeProfiles] = useState([]);
+
+  const dbRef = firebase.database().ref();
+
+  // function to create a new client profile
+  const createClientProfile = () => {
+    const newClientProfile = {
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'johndoe@gmail.com',
+      phone: '555-555-5555',
+      address: '123 Main St',
+      city: 'Anytown',
+      state: 'NY',
+      zip: '12345',
+      dateOfBirth: '01/01/1990',
+      occupation: 'Software Engineer'
+    };
+
+    dbRef.child('clientProfiles').push(newClientProfile);
+  };
+
+  // function to create a new employee profile
+  const createEmployeeProfile = () => {
+    const newEmployeeProfile = {
+      firstName: 'Jane',
+      lastName: 'Doe',
+      email: 'janedoe@gmail.com',
+      phone: '555-555-5555',
+      address: '456 Elm St',
+      city: 'Othertown',
+      state: 'CA',
+      zip: '67890',
+      dateOfBirth: '02/02/1995',
+      position: 'Manager'
+    };
+
+    dbRef.child('employeeProfiles').push(newEmployeeProfile);
+  };
+
+  // function to update a client profile
+  const updateClientProfile = (profileId, updatedProfile) => {
+    dbRef.child(`clientProfiles/${profileId}`).update(updatedProfile);
+  };
+
+  // function to update an employee profile
+  const updateEmployeeProfile = (profileId, updatedProfile) => {
+    dbRef.child(`employeeProfiles/${profileId}`).update(updatedProfile);
+  };
+
+  // function to delete a client profile
+  const deleteClientProfile = (profileId) => {
+    dbRef.child(`clientProfiles/${profileId}`).remove();
+  };
+
+  // function to delete an employee profile
+  const deleteEmployeeProfile = (profileId) => {
+    dbRef.child(`employeeProfiles/${profileId}`).remove();
+  };
+
+  // retrieve all client profiles from Firebase
+  const getClientProfiles = () => {
+    dbRef.child('clientProfiles').on('value', (snapshot) => {
+      const profiles = [];
+      snapshot.forEach((childSnapshot) => {
+        const profile = childSnapshot.val();
+        profile.id = childSnapshot.key;
+        profiles.push(profile);
+      });
+      setClientProfiles(profiles);
+    });
+  };
+
+  // retrieve all employee profiles from Firebase
+  const getEmployeeProfiles = () => {
+    dbRef.child('employeeProfiles').on('value', (snapshot) => {
+      const profiles = [];
+      snapshot.forEach((childSnapshot) => {
+        const profile = childSnapshot.val();
+        profile
+  return (
+  <div>
+    <h2>Client Profiles</h2>
+    <ul>
+      {clientProfiles.map((profile) => (
+        <li key={profile.id}>
+          {profile.firstName} {profile.lastName}
+          <button onClick={() => deleteClientProfile(profile.id)}>Delete</button>
+        </li>
+      ))}
+    </ul>
+
+    <h2>Employee Profiles</h2>
+    <ul>
+      {employeeProfiles.map((profile) => (
+        <li key={profile.id}>
+          {profile.firstName} {profile.lastName}
+          <button onClick={() => deleteEmployeeProfile(profile.id)}>Delete</button>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+}
+
+
+import React, { useState, useEffect } from "react";
+import {app} from "../../firebase";
+import firebase from 'firebase/compat/app';
+import "firebase/compat/database";
+
+export default function Profile() {
+  const [clientProfiles, setClientProfiles] = useState([]);
+  const [employeeProfiles, setEmployeeProfiles] = useState([]);
+  const dbRef = app.database().ref();
+
+  // function to create a new client profile
+  const createClientProfile = () => {
+    const newClientProfile = {
+      firstName: "John",
+      lastName: "Doe",
+      email: "johndoe@gmail.com",
+      phone: "555-555-5555",
+      address: "123 Main St",
+      city: "Anytown",
+      state: "NY",
+      zip: "12345",
+      dateOfBirth: "01/01/1990",
+      occupation: "Software Engineer",
+    };
+
+    dbRef.child("clientProfiles").push(newClientProfile);
+  };
+
+  // function to create a new employee profile
+  const createEmployeeProfile = () => {
+    const newEmployeeProfile = {
+      firstName: "Jane",
+      lastName: "Doe",
+      email: "janedoe@gmail.com",
+      phone: "555-555-5555",
+      address: "456 Elm St",
+      city: "Othertown",
+      state: "CA",
+      zip: "67890",
+      dateOfBirth: "02/02/1995",
+      position: "Manager",
+    };
+
+    dbRef.child("employeeProfiles").push(newEmployeeProfile);
+  };
+
+  // function to update a client profile
+  const updateClientProfile = (profileId, updatedProfile) => {
+    dbRef.child(`clientProfiles/${profileId}`).update(updatedProfile);
+  };
+
+  // function to update an employee profile
+  const updateEmployeeProfile = (profileId, updatedProfile) => {
+    dbRef.child(`employeeProfiles/${profileId}`).update(updatedProfile);
+  };
+
+  // function to delete a client profile
+  const deleteClientProfile = (profileId) => {
+    dbRef.child(`clientProfiles/${profileId}`).remove();
+  };
+
+  // function to delete an employee profile
+  const deleteEmployeeProfile = (profileId) => {
+    dbRef.child(`employeeProfiles/${profileId}`).remove();
+  };
+
+  // retrieve all client profiles from Firebase
+  const getClientProfiles = () => {
+    dbRef.child("clientProfiles").on("value", (snapshot) => {
+      const profiles = [];
+      snapshot.forEach((childSnapshot) => {
+        const profile = childSnapshot.val();
+        profile.id = childSnapshot.key;
+        profiles.push(profile);
+      });
+      setClientProfiles(profiles);
+    });
+  };
+
+  // retrieve all employee profiles from Firebase
+  const getEmployeeProfiles = () => {
+    dbRef.child("employeeProfiles").on("value", (snapshot) => {
+      const profiles = [];
+      snapshot.forEach((childSnapshot) => {
+        const profile = childSnapshot.val();
+        profile.id = childSnapshot.key;
+        profiles.push(profile);
+      });
+      setEmployeeProfiles(profiles);
+    });
+  };
+
+  useEffect(() => {
+    getClientProfiles();
+    getEmployeeProfiles();
+  }, []);
+
+  return (
+    <>
+      <div>
+        <h1>Welcome to MyApp</h1>
+        <button onClick={createClientProfile}>Create client profile</button>
+        <button onClick={createEmployeeProfile}>Create employee profile</button>
+        <ul>
+          {clientProfiles.map((profile) => (
+            <li key={profile.id}>
+              {profile.firstName} {profile.lastName} ({profile.email})
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={() =>
+            updateClientProfile(clientProfiles[0].id, { firstName: "Updated" })
+          }
+        >
+          Update client profile
+        </button>
+        <button onClick={() => deleteClientProfile(clientProfiles[0].id)}>
+          Delete client profile
+        </button>
+        <hr />
+        <ul>
+          {employeeProfiles.map((profile) => (
+            <li key={profile.id}>
+              {profile.firstName} {profile.lastName} ({profile.email})
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={() =>
+            updateEmployeeProfile(employeeProfiles[0].id, {
+              firstName: "Updated",
+            })
+          }
+        >
+          Update employee profile
+        </button>
+        <button onClick={() => deleteEmployeeProfile(employeeProfiles[0].id)}>
+          Delete employee profile
+        </button>
+      </div>
+      );
+    </>
+  );
+}

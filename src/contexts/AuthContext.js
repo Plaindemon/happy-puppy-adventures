@@ -3,7 +3,9 @@ import { auth } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  updateEmail as updateAuthEmail,
+  updatePassword as updateAuthPassword,
 } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -52,9 +54,9 @@ export function AuthProvider({ children }) {
       });
   }
 
-//   function login(email, password) {
-//     return auth.signInWithEmailAndPassword(email, password);
-//   }
+  //   function login(email, password) {
+  //     return auth.signInWithEmailAndPassword(email, password);
+  //   }
 
   function logout() {
     return auth.signOut();
