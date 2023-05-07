@@ -1,0 +1,179 @@
+import React, { useState, useEffect, useContext } from "react";
+// import { initializeApp } from 'firebase/app';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import { Alert } from "react-bootstrap";
+import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore"; 
+// import { AuthProvider } from "../../contexts/AuthContext";
+import { app, db } from "../../firebase";
+
+
+function ProfileForm() {
+   
+  const [user, setUser] = useState(null);
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [location, setLocation] = useState("");
+  const [job, setJob] = useState("");
+  const [hobbies, setHobbies] = useState("");
+  const [education, setEducation] = useState("");
+  const [languages, setLanguages] = useState("");
+  const [aboutMe, setAboutMe] = useState("");
+  const [profileSubmitted, setProfileSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(setUser);
+  }, []);
+
+
+
+
+useEffect(() => {
+    firebase.auth().onAuthStateChanged(setUser);
+    // Get user's profile data from Firestore and set the state
+    const getUserProfile = async () => {
+      const docRef = doc(db, "profiles", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setName(data.name || "");
+        setAge(data.age || "");
+        setLocation(data.location || "");
+        setJob(data.job || "");
+        setHobbies(data.hobbies || "");
+        setEducation(data.education || "");
+        setLanguages(data.languages || "");
+        setAboutMe(data.aboutMe || "");
+      }
+    };
+    if (user) {
+      getUserProfile();
+    }
+  }, [user]);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      // Update user's profile data in Firestore
+      const docRef = doc(db, "profiles", user.uid);
+      await setDoc(docRef, {
+        name,
+        age,
+        location,
+        job,
+        hobbies,
+        education,
+        languages,
+        aboutMe,
+      }, { merge: true });
+      setProfileSubmitted(true);
+    } catch (error) {
+      console.log(error);
+      setError(error.message);
+    }
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+   await db.collection("profiles")
+      setDoc(doc(user.data.uid))
+      .set({
+        name,
+        age,
+        location,
+        job,
+        hobbies,
+        education,
+        languages,
+        aboutMe,
+      })
+      .then(() => setProfileSubmitted(true))
+      .catch((error) => console.log(error, user));
+  }
+
+  if (!user) {
+    return <div>Please log in to access your profile.</div>;
+  }
+  if (!user) {
+    return <div>Please log in to access your profile.</div>;
+  }
+  return (
+    <div>
+      <h2>Profile Form</h2>
+      {profileSubmitted ? (
+        <div>Your profile has been submitted.</div>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          {/* <label htmlFor="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
+
+          <label htmlFor="location">Location:</label>
+          <input
+            type="text"
+            id="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+
+          <label htmlFor="job">Job:</label>
+          <input
+            type="text"
+            id="job"
+            value={job}
+            onChange={(e) => setJob(e.target.value)}
+          />
+
+          <label htmlFor="hobbies">Hobbies:</label>
+          <input
+            type="text"
+            id="hobbies"
+            value={hobbies}
+            onChange={(e) => setHobbies(e.target.value)}
+          />
+
+          <label htmlFor="education">Education:</label>
+          <input
+            type="text"
+            id="education"
+            value={education}
+            onChange={(e) => setEducation(e.target.value)}
+          />
+
+          <label htmlFor="languages">Languages:</label>
+          <input
+            type="text"
+            id="languages"
+            value={languages}
+            onChange={(e) => setLanguages(e.target.value)}
+          />
+
+          <label htmlFor="aboutMe">About Me:</label>
+          <textarea
+            id="aboutMe"
+            value={aboutMe}
+            onChange={(e) => setAboutMe(e.target.value)}
+          /> */}
+
+          <button type="submit">Submit</button>
+        </form>
+      )}
+    </div>
+  );
+}
+
+export default ProfileForm;
