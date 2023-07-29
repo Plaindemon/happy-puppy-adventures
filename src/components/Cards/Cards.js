@@ -15,6 +15,7 @@ function Cards() {
                 text="Puppy on a hike"
                 label='adventure'
                 path="/services"
+                className="cards-img"
                 />
                 <CardItem
                 src="images/charlie-fall.jpeg"

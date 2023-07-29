@@ -5,6 +5,8 @@ import "firebase/compat/firestore";
 import { Alert, Form, Button } from "react-bootstrap";
 import { doc, setDoc, updateDoc, getDoc } from "firebase/firestore";
 
+import "../../styles/Profile.css"
+
 firebase.initializeApp({
   // Firebase config object
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -93,11 +95,11 @@ function ProfileForm() {
 
   return (
     <div>
-      <h2>Profile Form</h2>
+      <h2 className="profile-h2">Profile Form</h2>
       {profileSubmitted ? (
         <div>Your profile has been updated.</div>
       ) : (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="profile-form">
           {error && <Alert variant="danger">{error}</Alert>}
           <Form.Label htmlFor="name">Name:</Form.Label>
           <Form.Control
@@ -186,7 +188,7 @@ function ProfileForm() {
             onChange={(e) => setProfilePicture(e.target.value)}
           /> */}
 
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="profile-submit-btn">Submit</Button>
         </Form>
       )}
     </div>
