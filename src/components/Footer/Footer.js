@@ -24,7 +24,7 @@ function Footer() {
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
             <div className='footer-link-items'>
-                <h2>About us</h2>
+                <h3>About us</h3>
                 
                 <a href="https://personal-portfolio-57sd.onrender.com">Portfolio - Ben</a>
                 {/* <Link to ="/">Locations</Link> */}
@@ -35,7 +35,7 @@ function Footer() {
 
             </div>
             <div className='footer-link-items'>
-                <h2>Client Paperwork</h2>
+                <h3>Client Info</h3>
                 <Link to="/paperwork">About your pets</Link>
                 <Link to ="/paperwork">Vet & Emergency Contact</Link>
                 {/* <Link to ="/">Emergency Contact</Link> */}
@@ -44,7 +44,7 @@ function Footer() {
 
             </div>
             <div className='footer-link-items'>
-                <h2>Contact us</h2>
+                <h3>Contact us</h3>
                 <Link to="/sign-up">Sign up</Link>
                 <Link to ="/new-client">Contact Me</Link>
                 {/* <Link to ="/">Request Dates</Link> */}
@@ -55,7 +55,7 @@ function Footer() {
         </div>
         <div className='footer-link-wrapper'>
             <div className='footer-link-items'>
-                <h2>Social</h2>
+                <h3>Social</h3>
                 <a href="https://www.instagram.com/happy.puppyadventures/">Instagram</a>
                 <a href="https://www.facebook.com/profile.php?id=100089561836580">Facebook</a>
                 {/* <Link to ="/">Tiktok</Link> */}
@@ -66,7 +66,7 @@ function Footer() {
 
             </div>
             {/* <div className='footer-link-items'>
-                <h2>Legal</h2>
+                <h3>Legal</h3>
                 <Link to="/sign-up">Terms and Conditions</Link>
                 <Link to ="/">Copyright</Link>
                 <Link to ="/">Privacy Statement</Link>
