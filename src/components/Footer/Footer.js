@@ -7,8 +7,8 @@ function Footer() {
   return (
     <div className="footer-container">
       <section className="footer-subscription">
-        <p className="footer-subscription-heading">Join the newsletter</p>
-        <p className="footer-subscription-text"></p>
+        {/* <p className="footer-subscription-heading">Join the newsletter</p> */}
+        {/* <p className="footer-subscription-text"></p>
         <div className="input-areas">
           <form>
             <input
@@ -19,7 +19,7 @@ function Footer() {
             />
             <Button buttonStyle="btn-outline">Subscribe</Button>
           </form>
-        </div>
+        </div> */}
       </section>
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
