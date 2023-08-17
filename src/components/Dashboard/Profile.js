@@ -101,64 +101,71 @@ function ProfileForm() {
       ) : (
         <Form onSubmit={handleSubmit} className="profile-form">
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form.Label htmlFor="name">Name:</Form.Label>
-          <Form.Control
+          <Form.Label className= "profile-label" htmlFor="name">Name:</Form.Label>
+          <Form.Control className="profile-text-box"
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
 
-          <Form.Label htmlFor="age">Age:</Form.Label>
+          <Form.Label className= "profile-label" htmlFor="age">Age:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             type="number"
             id="age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
 
-          <Form.Label htmlFor="location">Location:</Form.Label>
+          <Form.Label className= "profile-label" htmlFor="location">Location:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             type="text"
             id="location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
 
-          <Form.Label htmlFor="job">Job:</Form.Label>
+          <Form.Label className= "profile-label" htmlFor="job">Job:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             type="text"
             id="job"
             value={job}
             onChange={(e) => setJob(e.target.value)}
           />
 
-          <Form.Label htmlFor="hobbies">Hobbies:</Form.Label>
+          <Form.Label  className= "profile-label" htmlFor="hobbies">Hobbies:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             type="text"
             id="hobbies"
             value={hobbies}
             onChange={(e) => setHobbies(e.target.value)}
           />
 
-          <Form.Label htmlFor="education">Education:</Form.Label>
+          <Form.Label className= "profile-label" htmlFor="education">Education:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             type="text"
             id="education"
             value={education}
             onChange={(e) => setEducation(e.target.value)}
           />
 
-          <Form.Label htmlFor="languages">Languages:</Form.Label>
+          <Form.Label  className= "profile-label" htmlFor="languages">Languages:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             type="text"
             id="languages"
             value={languages}
             onChange={(e) => setLanguages(e.target.value)}
           />
 
-          <Form.Label htmlFor="aboutMe">About Me:</Form.Label>
+          <Form.Label htmlFor="aboutMe" className= "profile-label">About Me:</Form.Label>
           <Form.Control
+          className="profile-text-box"
             id="aboutMe"
             value={aboutMe}
             onChange={(e) => setAboutMe(e.target.value)}
